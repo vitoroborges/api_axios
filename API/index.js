@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const Game = require("./games/Game")
+const cors = require('cors')
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cors())
 
 // Get all games
 app.get('/games', (req, res) => {
